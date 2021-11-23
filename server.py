@@ -190,18 +190,20 @@ def otp_page():
 @app.route("/change_password", methods=["POST","GET"])
 def change_pass_page():
 	global fp_username, otp, otp_requested
-	form = ChangePasswordForm()
-	if form.validate_on_submit():
-		new_password = form.new_password.data
-		user = User.query.filter_by(username=fp_username).first()
-		user.password = new_password
-		db.session.commit()
-		login_user(user)
-		fp_username = None
-		otp = None
-		otp_requested = False
-		return redirect(url_for('welcome_page'))
-	return render_template('change-pass.html',form=form)
+	if fp_username != None:
+		form = ChangePasswordForm()
+		if form.validate_on_submit():
+			new_password = form.new_password.data
+			user = User.query.filter_by(username=fp_username).first()
+			user.password = new_password
+			db.session.commit()
+			login_user(user)
+			fp_username = None
+			otp = None
+			otp_requested = False
+			return redirect(url_for('welcome_page'))
+		return render_template('change-pass.html',form=form)
+	return redirect(url_for('home_page'))
 
 
 @app.route("/logout",methods=["POST","GET"])
