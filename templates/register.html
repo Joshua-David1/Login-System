@@ -1,0 +1,39 @@
+{% extends 'home.html' %}
+{%block content%}
+
+<div class="outline-div">
+	<div class="left-div">
+		<h2 class="div-title">
+			Login System
+		</h2>
+		<p class="description">This is a multi-user, multi-role login system.</p>
+		<form action="/login">
+			<button class="redirect-btn">Login</button>
+		</form>
+		
+	</div>
+	<div class="right-div">
+		<h2 class="action">Register</h2>
+		<form action="/register" method="POST" novalidate>
+			{{form.csrf_token}}
+			{{form.email(autocomplete='off',class_="email-input")}}
+			{% if form.email.errors %}
+			<span class="error">{{form.email.errors[0]}}</span>
+			{% endif %}
+			{{form.username(autocomplete="off", class_='username-input')}}
+			{% if form.username.errors and not form.email.errors%}
+			<span class="error">{{form.username.errors[0]}}</span>
+			{% endif %}
+			{{form.password(class_='pass-input', autocomplete="off")}}
+			{% if form.password.errors and not form.username.errors %}
+			<span class="error">{{ form.password.errors[0]}}</span>
+			{% endif %}
+			<button class="btn-action">Register</button>
+		</form>
+		<p class="forget-pass-p">Don't remember your password?<a href="{{url_for('forget_password_page')}}">Click Here</a></p>
+	</div>
+</div>
+
+
+{{super()}}
+{% endblock %}

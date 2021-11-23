@@ -1,0 +1,14 @@
+{% extends 'home.html' %}
+{% block content %}
+<div class="outline-div welcome-outline-div">
+	<h1 style="background-color: #FF4265;color: white;font-weight: 900;position: absolute;top: 38%;left: 90px; transform: translateY(-50%); display: inline-block;">
+		You have successfully Logged In!!!!
+	</h1>
+	<form action="{{url_for('logout_page')}}" method="POST">
+		<button class="logout-btn">
+			Logout
+		</button>
+	</form>
+</div>
+{{super()}}
+{% endblock %}

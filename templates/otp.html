@@ -1,0 +1,16 @@
+{% extends 'home.html' %}
+{% block content %}
+<div class="outline-div forget-pass-outline-div">
+	<form action="{{url_for('otp_page')}}" method="POST">
+		{{form.csrf_token}}
+		<h2 class="action-otp">We've sent an OTP to your mail.</h2>
+		{{form.otp(autocomplete='off', class_='otp-input')}}
+		{% if form.otp.errors %}
+		<span class="error">{{form.otp.errors[0]}}</span>
+		{% endif %}
+		<a class="resend-otp-btn" style="font-weight: 600;color: white;padding-left: 25px;" href="{{url_for('otp_page')}}">Resend</a>
+		<button class="btn-action">Submit</button>
+	</form>
+</div>
+{{super()}}
+{% endblock %}

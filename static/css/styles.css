@@ -1,0 +1,272 @@
+*{
+	background-color: #F3E1E2;
+}
+
+a{
+	font-weight: 700;
+	color: black;
+}
+
+a:hover{
+	text-decoration: none;
+	color: black;
+}
+
+form{
+	background-color: white;
+}
+
+input{
+	margin: 5px;
+	padding: 7px;
+	border-radius: 5px;
+	text-align: center;
+	background-color: #EFEFEF;
+	border: none;
+	width: 320px;
+}
+
+input:focus{
+	border: 0;
+	outline: 0;
+}
+
+button:focus{
+	outline: none;
+	border: none;
+}
+
+.forget-pass-p{
+	font-size: 13px;
+	position: absolute;
+	background-color: white;
+	bottom: 90px;
+	left: 90px;
+
+}
+
+.username-input-login{
+	margin-top: 32%;
+}
+
+.username-input{
+}
+
+.pass-input{
+}
+
+.email-input{
+	margin-top: 20%;
+}
+
+.outline-div{
+	animation-name: slide-div;
+	animation-duration: 2s;
+	border-radius: 10px;
+	height: 500px;
+	width: 850px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	display: flex;
+	transform: translate(-50%,-50%);
+	background-color: #FFFFFF;
+}
+
+.right-div,.left-div{
+	text-align: center;
+}
+
+.right-div{
+	position: absolute;
+	right: 0;
+	border-radius: 0 10px 10px 0;
+	height: 100%;
+	width: 50%;
+	background-color: white;
+}
+
+.left-div{
+	background-color: #FF4265;
+	height: 100%;
+	border-radius: 10px 0 0 10px;
+	width: 50%;
+}
+
+.action{
+	font-weight: 900;
+	margin-top: 60px;
+	display: inline-block;
+	background-color: white;
+}
+
+.outline-div button.btn-action{
+	cursor: pointer;
+	color: white;
+	font-weight: 400;
+	padding: 5px;
+	width: 100px;
+	position: absolute;
+	border-radius: 5px;
+	border: 5px;
+	background-color: #FF4C2B;
+	bottom: 50px;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: 0.5s;
+}
+
+.outline-div button.btn-action:hover{
+	background-color: #FF6C2B;
+	transition: 0.5s;
+}
+
+
+.div-title{
+	font-weight: 900;
+	color: white;
+	background-color: #FF4265;
+	margin-top: 150px;
+}
+
+.description{
+	color: white;
+	background-color: #FF4265;
+}
+
+.redirect-btn{
+	position: absolute;
+	bottom: 150px;
+	transform: translateX(-50%);
+	cursor: pointer;
+	width: 120px;
+	font-weight: 500;
+	font-size: 19px;
+	padding: 5px;
+	border-radius: 5px;
+	background-color: white;
+	border: none;
+	transition: 0.5s;
+}
+
+.redirect-btn:hover{
+	background-color: #FFFE;
+	transition: 0.5s;
+}
+
+.welcome-outline-div{
+	background-color: #FF4265;
+	animation-name: welcome-div-visibility;
+	animation-duration: 2s;
+}
+
+.logout-btn{
+	border: none;
+	cursor: pointer;
+	padding: 10px;
+	left: 50%;
+	font-size: 20px;
+	font-weight: 700;
+	transform: translateX(-50%);
+	bottom: 120px;
+	position: absolute;
+	width: 150px;
+	transition: 0.5s;
+}
+
+.logout-btn:hover{
+	transform: 0.5s;
+	color: #FF4265;
+	background-color: white;
+}
+
+
+.error{
+	background-color: white;
+	display: inline-block;
+	color: red;
+	font-size: 15px;
+	font-weight: 500;
+}
+
+.error-otp{
+	background-color: white;
+	display: inline-block;
+	color: red;
+	font-size: 15px;
+	position: absolute;
+	top: 65%;
+	transform: translate(-50%,-50%);
+	left: 50%;
+}
+
+.otp-input, .fp-username-input{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+
+.action-otp{
+	font-weight: 900;
+	margin-top: 60px;
+	display: inline-block;
+	position: absolute;
+	top: 20%;
+	left: 22%;
+	background-color: white;
+}
+
+.resend-otp-btn{
+	cursor: pointer;
+	color: white;
+	font-weight: 400;
+	padding: 5px;
+	width: 100px;
+	position: absolute;
+	border-radius: 5px;
+	border: 5px;
+	background-color: #FF4C2B;
+	bottom: 100px;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: 0.5s;
+
+}
+
+.resend-otp-btn:hover{
+	background-color: #FF6C2B;
+	transition: 0.5s;
+}
+
+
+.newpass-input{
+	margin-top: 200px;
+	margin-left: 300px;
+	display: block;
+}
+
+.confpass-input{
+	display: block;
+	margin-left: 300px;
+}
+
+
+@keyframes slide-div{
+	from{
+		left: -50px;
+	}
+	to{
+		right: 50%;
+	}
+}
+
+@keyframes welcome-div-visibility{
+	from{
+		opacity: 0.5;
+	}
+	to{
+		opacity: 1;
+	}
+}

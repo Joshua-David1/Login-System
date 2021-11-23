@@ -1,0 +1,15 @@
+{% extends 'home.html' %}
+{% block content %}
+<div class="outline-div forget-pass-outline-div">
+	<form action="{{url_for('change_pass_page')}}" method="POST">
+		{{form.csrf_token}}
+		{{form.new_password(class_="newpass-input")}}
+		{% if form.new_password.errors %}
+		<span class="error">{{ form.new_password.errors[0] }}</span>
+		{% endif %}
+		{{form.confirm_password(class_="confpass-input")}}
+		<button class="btn-action">Submit</button>
+	</form>
+</div>
+{{super()}}
+{% endblock %}

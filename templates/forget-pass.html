@@ -1,0 +1,16 @@
+{% extends 'home.html' %}
+{% block content %}
+<div class="outline-div forget-pass-outline-div">
+	<form action="{{url_for('forget_password_page')}}" method="POST">
+		{{form.csrf_token}}
+		<h2 class="action-otp">Enter username to send the OTP to</h2>
+		{{form.username(autocomplete='off', class_='fp-username-input')}}
+		{% if form.username.errors %}
+		<span class="error-otp">{{form.username.errors[0]}}</span>
+		{% endif %}
+		<a class="resend-otp-btn" style="font-weight: 600;color: white;padding-left: 30px;" href="{{url_for('home_page')}}">Back</a>
+		<button class="btn-action">Submit</button>
+	</form>
+</div>
+{{super()}}
+{% endblock %}
